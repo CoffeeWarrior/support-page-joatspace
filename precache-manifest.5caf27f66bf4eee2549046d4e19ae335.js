@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/support-page-joatspace/static/js/runtime~main.3c382919.js"
   },
   {
-    "revision": "c4a52af06b74cf6ecf93",
-    "url": "/support-page-joatspace/static/js/main.c4a52af0.chunk.js"
+    "revision": "235a486ed6aee9ed5e98",
+    "url": "/support-page-joatspace/static/js/main.235a486e.chunk.js"
   },
   {
     "revision": "1456546a39e7f2e10890",
     "url": "/support-page-joatspace/static/js/1.1456546a.chunk.js"
   },
   {
-    "revision": "5ace291e017fd78e253d4ed98d5a70a9",
+    "revision": "09ddb4ae328079019780ca8e9bc6a181",
     "url": "/support-page-joatspace/index.html"
   }
 ];
