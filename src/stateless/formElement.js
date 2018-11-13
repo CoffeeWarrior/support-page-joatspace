@@ -1,22 +1,24 @@
 import React from "react";
 import Aux from "../helpers/auxiliary"
+import defaults from "../helpers/fontDefaults"
 
-const Input = (props) => {
+const FormElement = (props) => {
     const width = props.width;
-    const height = props.height;
 
+    //using width, we can set center the element using marginLeft
     const labelStyle = {
         marginLeft: `${(100 - width)/2}%`,
-        fontFamily: "Open Sans",
+        fontFamily: defaults.font,
         fontSize: "2rem",
-        color: "white"
+        color: defaults.textColor
     }
 
-    const inputStyle = {
+    const textAreaStyle = {
         borderRadius: "10px",
         width: `${width}%`,
         marginLeft: `${(100 - width)/2}%`,
-        fontFamily: "Open Sans",
+        marginBottom: "1rem",
+        fontFamily: defaults.font,
         fontSize: "3rem",
         color: "black",
         boxSizing: "content-box",
@@ -26,11 +28,11 @@ const Input = (props) => {
     return(
         <Aux>
             <label style={labelStyle}>{props.children}</label><br/>
-            <textArea type="text" rows={height} key={props.children} style={inputStyle}></textArea>
+            <textarea type="text" {...props} style={textAreaStyle}></textarea>
         </Aux>
         
     );
 
 }
 
-export default Input;
+export default FormElement;
