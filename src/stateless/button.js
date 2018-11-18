@@ -6,6 +6,10 @@ const Button = (props) => {
     const width = props.width;
     const height = props.height;
 
+    // need to add functionality to check if submittable in From.js
+    //update button styles if it is/isnt submittable
+    const canSubmit = props.canSubmit;
+
     const style = {
         width: `${width}%`,
         marginLeft: `${((100-width)/2)}%`,
@@ -21,7 +25,7 @@ const Button = (props) => {
     
     return( 
         <Aux>
-            <input type="submit" value={props.children} style={style} onClick={props.onClick}></input>
+            <button type="submit" style={style} onClick={props.onClick}>{props.children}</button>
         </Aux>
         )
 }

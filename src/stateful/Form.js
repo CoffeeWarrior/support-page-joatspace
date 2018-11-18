@@ -25,6 +25,7 @@ class Form extends Component {
     this.setState({...currentState})
   }
 
+  //sends form to firebase under "supportForms" data
   submitForm = (e) => {
     e.preventDefault()
     const form = {
