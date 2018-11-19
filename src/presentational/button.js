@@ -1,14 +1,14 @@
 import React from "react";
 import defaults from "../helpers/fontDefaults"
 import Aux from "../helpers/auxiliary"
-//Button element accepts children, height, and width. Width in percent, height in rem
+//Button element accepts submittable, children, height, and width. Width in percent, height in rem. Submittable determines button styles.
 const Button = (props) => {
     const width = props.width;
     const height = props.height;
 
-    // need to add functionality to check if submittable in From.js
-    //update button styles if it is/isnt submittable
-    const canSubmit = props.canSubmit;
+    //
+    const submittable = props.submittable;
+
 
     const style = {
         width: `${width}%`,
@@ -20,12 +20,22 @@ const Button = (props) => {
         fontSize: "1rem",
         color: "black",
         backgroundColor: "#BEE9E8",
-        borderRadius: "10px"
+        borderRadius: "10px"        
     }
+
+    //if the form is submittable or not, the button will either be clickable or non-clickable
+    if(submittable){
+        style.cursor = "pointer"
+    } else {
+        style.cursor = "not-allowed"
+    }
+
+
+
     
     return( 
         <Aux>
-            <button type="submit" style={style} onClick={props.onClick}>{props.children}</button>
+            <button type="submit" style={style} onClick={props.onClick} disabled={!submittable}>{props.children}</button>
         </Aux>
         )
 }

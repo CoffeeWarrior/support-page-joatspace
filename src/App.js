@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import Header from "./stateless/header";
-import Paragraph from "./stateless/paragraph";
-import Form from "./stateful/Form";
+import FormPage from "./pages/formPage";
+import RedirectPage from "./pages/redirectPage";
+import {Route, Switch, Redirect} from "react-router-dom"
+
 class App extends Component {
   render() {
-    //set background
-    
     return (
       <div className="App">
-        <Header>experiencing issues?</Header>
-        <Paragraph>We're sorry to hear that, <br/>please let us know about it below &darr;</Paragraph>
-        <Form></Form>
+        <Switch>
+          <Route path="/" exact component={FormPage}></Route>
+          <Route path="/thankYou" component={RedirectPage}></Route>
+          <Redirect to={"/"}></Redirect>
+        </Switch>
       </div>
     );
   }
